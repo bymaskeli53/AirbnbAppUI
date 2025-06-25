@@ -35,12 +35,9 @@ class HomeFragment : Fragment() {
             tab.customView = createCustomTabView(title, tabIcons[index], isNew = (index != 0))
             binding.tabLayout.addTab(tab)
         }
-//        val popularPlacesList = listOf(Place(R.drawable.ic_place_1, "New York", "New York City"),
-//            Place(R.drawable.ic_place_2, "Paris", "Paris"), Place(R.drawable.ic_place_3, "London", "London"),)
-//        val adapter = PopularPlacesAdapter(popularPlacesList)
-//        binding.rvFavorites.adapter = adapter
 
-        binding.rvFavorites.layoutManager =
+
+         binding.rvFavorites.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 
         binding.rvFavorites.adapter = ParentAdapter(ParentDataFactory.getParents(4))
